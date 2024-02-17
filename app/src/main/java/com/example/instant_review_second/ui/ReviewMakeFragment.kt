@@ -33,6 +33,7 @@ class ReviewMakeFragment : Fragment() {
         val btnClose: ImageButton = view.findViewById(R.id.btn_close)
         btnClose.setOnClickListener {
             // MainActivityに戻りたい
+            println("レビュー作成画面の閉めるボタンをタップしたよ")
             fragmentManager
                 ?.popBackStack()
         }

@@ -30,6 +30,7 @@ class MainActivity : AppCompatActivity() {
             position = 0
             supportFragmentManager.beginTransaction()
                 .replace(R.id.toggle_container, AteFragment())
+                .addToBackStack(null)
                 .commit()
         }
 
@@ -37,6 +38,7 @@ class MainActivity : AppCompatActivity() {
             position = 1
             supportFragmentManager.beginTransaction()
                 .replace(R.id.toggle_container, WantFragment())
+                .addToBackStack(null)
                 .commit()
         }
 
