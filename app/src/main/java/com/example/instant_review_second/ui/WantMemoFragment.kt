@@ -28,8 +28,8 @@ class WantMemoFragment : Fragment() {
         (activity as AppCompatActivity).setSupportActionBar(toolbar)
         (activity as AppCompatActivity).supportActionBar?.setDisplayShowTitleEnabled(false)
 
-        val btnClose: ImageButton = view.findViewById(R.id.btn_close)
-        btnClose.setOnClickListener {
+        val btnCloseWantMemo: ImageButton = view.findViewById(R.id.btn_close_want_memo)
+        btnCloseWantMemo.setOnClickListener {
             // MainActivityに戻りたい
             fragmentManager
                 ?.popBackStack()

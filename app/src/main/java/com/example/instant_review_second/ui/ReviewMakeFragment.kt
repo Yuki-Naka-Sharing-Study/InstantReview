@@ -5,13 +5,10 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
 import android.widget.ImageButton
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
-import com.example.instant_review_second.MainActivity
 import com.example.instant_review_second.R
-import org.w3c.dom.Text
 
 class ReviewMakeFragment : Fragment() {
 
@@ -30,8 +27,8 @@ class ReviewMakeFragment : Fragment() {
         (activity as AppCompatActivity).setSupportActionBar(toolbar)
         (activity as AppCompatActivity).supportActionBar?.setDisplayShowTitleEnabled(false)
 
-        val btnClose: ImageButton = view.findViewById(R.id.btn_close)
-        btnClose.setOnClickListener {
+        val btnCloseReviewMake: ImageButton = view.findViewById(R.id.btn_close_review_make)
+        btnCloseReviewMake.setOnClickListener {
             // MainActivityに戻りたい
             fragmentManager
                 ?.popBackStack()
