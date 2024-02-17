@@ -10,9 +10,9 @@ import androidx.appcompat.app.AppCompatActivity
 import com.example.instant_review_second.R
 class WantMemoFragment : Fragment() {
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-    }
+//    override fun onCreate(savedInstanceState: Bundle?) {
+//        super.onCreate(savedInstanceState)
+//    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -28,7 +28,7 @@ class WantMemoFragment : Fragment() {
         (activity as AppCompatActivity).setSupportActionBar(toolbar)
         (activity as AppCompatActivity).supportActionBar?.setDisplayShowTitleEnabled(false)
 
-        val btnClose: ImageButton = view.findViewById(R.id.btn_close)
+        val btnClose: ImageButton = view.findViewById(R.id.btn_close_review_make)
         btnClose.setOnClickListener {
             // MainActivityに戻りたい
             fragmentManager
