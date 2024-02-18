@@ -34,7 +34,7 @@ class ReviewMakeFragment : Fragment() {
                 ?.popBackStack()
         }
 
-        val textSave: TextView = view.findViewById(R.id.save_text_view)
+        val textSave: TextView = view.findViewById(R.id.text_view_save_review_make)
         textSave.setOnClickListener {
 
         }
