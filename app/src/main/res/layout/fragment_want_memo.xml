@@ -13,7 +13,7 @@
         android:layout_height="match_parent" >
 
         <com.google.android.material.appbar.MaterialToolbar
-            android:id="@+id/tool_bar"
+            android:id="@+id/tool_bar_want_memo"
             android:layout_height="wrap_content"
             android:layout_width="match_parent"
             app:layout_constraintTop_toTopOf="parent"
@@ -58,6 +58,17 @@
             android:layout_gravity="center"
             android:gravity="center"
             android:text="This is want memo fragment" />
+
+        <TextView
+            android:id="@+id/text_view_want_memo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="タイトル"
+            app:layout_constraintTop_toBottomOf="@+id/tool_bar_want_memo"
+            app:layout_constraintLeft_toLeftOf="parent"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="20dp"
+            />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

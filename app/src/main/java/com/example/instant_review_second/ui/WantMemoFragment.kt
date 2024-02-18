@@ -20,7 +20,7 @@ class WantMemoFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        val toolbar = view.findViewById<com.google.android.material.appbar.MaterialToolbar>(R.id.tool_bar)
+        val toolbar = view.findViewById<com.google.android.material.appbar.MaterialToolbar>(R.id.tool_bar_want_memo)
         (activity as AppCompatActivity).setSupportActionBar(toolbar)
         (activity as AppCompatActivity).supportActionBar?.setDisplayShowTitleEnabled(false)
 
