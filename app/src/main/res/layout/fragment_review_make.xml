@@ -86,7 +86,7 @@
             />
 
         <TextView
-            android:id="@+id/text_view_comment_review_make"
+            android:id="@+id/text_view_review_review_make"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="レビュー"
@@ -95,6 +95,8 @@
             android:layout_marginTop="264dp"
             android:layout_marginLeft="20dp"
             />
+
+
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
