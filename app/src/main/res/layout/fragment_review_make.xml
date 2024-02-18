@@ -51,30 +51,14 @@
         </com.google.android.material.appbar.MaterialToolbar>
 
         <TextView
-            android:id="@+id/name_of_instant"
-            android:layout_width="192dp"
-            android:layout_height="48dp"
-            android:text="インスタント食品の名称"
-            app:layout_constraintTop_toBottomOf="@id/toolbar_review_make"
-            app:layout_constraintLeft_toLeftOf="parent"
-            />
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:gravity="center"
-            android:text="This is review make fragment"
-            tools:layout_editor_absoluteX="205dp"
-            tools:layout_editor_absoluteY="190dp"
-            />
-
-        <EditText
-            android:id="@+id/editTextText"
-            android:layout_width="match_parent"
+            android:id="@+id/text_view_name_of_instant_review_make"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:layout_constraintTop_toBottomOf="@+id/name_of_instant"
+            android:text="インスタント食品の名称"
+            app:layout_constraintTop_toBottomOf="@+id/toolbar_review_make"
             app:layout_constraintLeft_toLeftOf="parent"
-            android:inputType="text"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="20dp"
             />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
