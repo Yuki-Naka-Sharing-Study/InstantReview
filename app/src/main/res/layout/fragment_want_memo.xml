@@ -55,10 +55,10 @@
         </com.google.android.material.appbar.MaterialToolbar>
 
         <TextView
-            android:id="@+id/text_view_want_memo"
+            android:id="@+id/text_view_name_of_instant_want_memo"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="タイトル"
+            android:text="インスタント食品の名前"
             app:layout_constraintTop_toBottomOf="@+id/tool_bar_want_memo"
             app:layout_constraintLeft_toLeftOf="parent"
             android:layout_marginTop="20dp"
@@ -71,7 +71,7 @@
             android:layout_height="wrap_content"
             android:inputType="text"
             android:hint="例（カップヌードル）"
-            app:layout_constraintTop_toBottomOf="@+id/text_view_want_memo"
+            app:layout_constraintTop_toBottomOf="@+id/text_view_name_of_instant_want_memo"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
             android:layout_marginTop="20dp"
