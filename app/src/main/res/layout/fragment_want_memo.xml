@@ -70,6 +70,21 @@
             android:layout_marginLeft="20dp"
             />
 
+        <EditText
+            android:id="@+id/edit_text_want_memo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="text"
+            android:hint="例（カップヌードル）"
+            app:layout_constraintTop_toBottomOf="@+id/text_view_want_memo"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            />
+
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </FrameLayout>
