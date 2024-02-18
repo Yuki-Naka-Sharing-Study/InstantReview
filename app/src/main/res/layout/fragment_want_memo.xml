@@ -87,6 +87,19 @@
             android:layout_marginTop="20dp"
             />
 
+        <TextView
+            android:id="@+id/text_view_comment_want_memo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="コメント"
+            app:layout_constraintTop_toBottomOf="@+id/edit_text_want_memo"
+            app:layout_constraintLeft_toLeftOf="parent"
+            android:layout_marginTop="264dp"
+            android:layout_marginLeft="20dp"
+            />
+
+
+
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
