@@ -62,7 +62,7 @@
             />
 
         <EditText
-            android:id="@+id/editTextText"
+            android:id="@+id/edit_text_name_of_instant_review_make"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:inputType="text"
@@ -74,6 +74,8 @@
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"
             />
+
+
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
