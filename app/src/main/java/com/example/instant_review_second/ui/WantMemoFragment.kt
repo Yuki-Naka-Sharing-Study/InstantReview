@@ -10,10 +10,6 @@ import androidx.appcompat.app.AppCompatActivity
 import com.example.instant_review_second.R
 class WantMemoFragment : Fragment() {
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-    }
-
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
