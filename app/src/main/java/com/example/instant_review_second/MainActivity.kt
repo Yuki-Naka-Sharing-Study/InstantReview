@@ -3,6 +3,7 @@ package com.example.instant_review_second
 import android.content.Context
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.AttributeSet
 import android.view.MotionEvent
 import android.view.View
 import android.view.inputmethod.InputMethodManager
@@ -44,6 +45,9 @@ class MainActivity : AppCompatActivity() {
         // FloatingActionButtonの生成
         var floatingActionButton = FloatingActionButton(this)
         floatingActionButton = findViewById(R.id.floating_action_button)
+
+        floatingActionButton.visibility = View.VISIBLE
+
         floatingActionButton.setOnClickListener {
             if (position == 0) {
                 floatingActionButton.visibility = View.GONE
