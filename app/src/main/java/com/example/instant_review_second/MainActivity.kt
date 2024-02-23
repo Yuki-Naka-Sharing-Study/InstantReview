@@ -4,6 +4,7 @@ import android.content.Context
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.MotionEvent
+import android.view.View
 import android.view.inputmethod.InputMethodManager
 import android.widget.Button
 import androidx.constraintlayout.widget.ConstraintLayout
@@ -45,6 +46,7 @@ class MainActivity : AppCompatActivity() {
         floatingActionButton = findViewById(R.id.floating_action_button)
         floatingActionButton.setOnClickListener {
             if (position == 0) {
+                floatingActionButton.visibility = View.GONE
                 supportFragmentManager.beginTransaction()
                     .replace(R.id.toggle_container, ReviewMakeFragment())
                     // .addToBackStack(null)の「()」内には戻りたい箇所に相当するタグを書く。
@@ -52,6 +54,7 @@ class MainActivity : AppCompatActivity() {
                     .addToBackStack(null)
                     .commit()
             } else {
+                floatingActionButton.visibility = View.GONE
                 supportFragmentManager.beginTransaction()
                     .replace(R.id.toggle_container, WantMemoFragment())
                     .addToBackStack(null)
