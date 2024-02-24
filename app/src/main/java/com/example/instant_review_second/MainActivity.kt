@@ -1,13 +1,12 @@
 package com.example.instant_review_second
 
 import android.content.Context
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.AttributeSet
 import android.view.MotionEvent
 import android.view.View
 import android.view.inputmethod.InputMethodManager
 import android.widget.Button
+import androidx.appcompat.app.AppCompatActivity
 import androidx.constraintlayout.widget.ConstraintLayout
 import com.example.instant_review_second.ui.AteFragment
 import com.example.instant_review_second.ui.ReviewMakeFragment
@@ -45,8 +44,6 @@ class MainActivity : AppCompatActivity() {
         // FloatingActionButtonの生成
         var floatingActionButton = FloatingActionButton(this)
         floatingActionButton = findViewById(R.id.floating_action_button)
-
-        floatingActionButton.visibility = View.VISIBLE
 
         floatingActionButton.setOnClickListener {
             if (position == 0) {
