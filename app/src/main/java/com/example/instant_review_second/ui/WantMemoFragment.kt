@@ -8,6 +8,8 @@ import android.view.ViewGroup
 import android.widget.ImageButton
 import androidx.appcompat.app.AppCompatActivity
 import com.example.instant_review_second.R
+import com.google.android.material.floatingactionbutton.FloatingActionButton
+
 class WantMemoFragment : Fragment() {
 
     override fun onCreateView(
@@ -23,10 +25,14 @@ class WantMemoFragment : Fragment() {
         val toolbar = view.findViewById<com.google.android.material.appbar.MaterialToolbar>(R.id.tool_bar_want_memo)
         (activity as AppCompatActivity).setSupportActionBar(toolbar)
         (activity as AppCompatActivity).supportActionBar?.setDisplayShowTitleEnabled(false)
+        val fab = getActivity()?.findViewById<FloatingActionButton>(R.id.floating_action_button)
 
         val btnCloseWantMemo: ImageButton = view.findViewById(R.id.btn_close_want_memo)
         btnCloseWantMemo.setOnClickListener {
             // MainActivityに戻りたい
+            if (fab != null) {
+                fab.visibility = View.VISIBLE
+            }
             fragmentManager
                 ?.popBackStack()
         }
