@@ -53,6 +53,7 @@ class AteFragment : Fragment() {
     }
 
     enum class Sort(val sort: String) {
+        // デフォルトでは「値段が安い順」を表示したい。
         PRICE("値段が安い順"),
         TASTY("美味しかった順"),
         SPICY("辛い順")
