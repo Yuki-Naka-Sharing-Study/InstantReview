@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageButton
+import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import com.example.instant_review_second.R
 import com.google.android.material.floatingactionbutton.FloatingActionButton
@@ -35,6 +36,10 @@ class WantMemoFragment : Fragment() {
             }
             fragmentManager
                 ?.popBackStack()
+        }
+        val textViewSaveWantMemo: TextView = view.findViewById(R.id.text_view_save_want_memo)
+        textViewSaveWantMemo.setOnClickListener {
+
         }
     }
 
