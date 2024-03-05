@@ -19,9 +19,16 @@ class MainActivity : AppCompatActivity() {
     private lateinit var btnAte: Button
     private lateinit var btnWant: Button
 
+    //Room用
+    lateinit var database: ReviewRoomDatabase
+    lateinit var reviewDao: ReviewDao
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+        database = ReviewRoomDatabase.getDatabase(this) // データベースの取得
+        reviewDao = database.reviewDao()        // DAOの取得
 
         btnAte = findViewById(R.id.btn_ate)
         btnWant = findViewById(R.id.btn_want_to_eat)

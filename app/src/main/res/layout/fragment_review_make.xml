@@ -10,72 +10,106 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent" >
+        android:layout_height="match_parent"
+        android:background="#d3d3d3">
 
         <com.google.android.material.appbar.MaterialToolbar
-            android:id="@+id/toolbar"
+            android:id="@+id/toolbar_review_make"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
-            android:background="?attr/colorPrimary"
+            android:background="@color/white"
             android:elevation="4dp"
             android:theme="?attr/actionBarTheme"
-            tools:ignore="MissingConstraints"
-            >
+            tools:ignore="MissingConstraints">
 
             <ImageButton
-                android:id="@+id/btn_close"
+                android:id="@+id/btn_close_review_make"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="start"
-                />
+                android:layout_marginLeft="20dp" />
 
             <TextView
-                android:id="@+id/tv_title"
+                android:id="@+id/text_view_title_review_make"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_gravity="center"
                 android:text="レビュー作成"
                 android:textColor="@color/black"
-                android:textSize="18sp"
-                android:layout_gravity="center"
-                />
+                android:textSize="18sp" />
 
             <TextView
-                android:id="@+id/save_text_view"
+                android:id="@+id/text_view_save_review_make"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="保存"
                 android:textSize="18sp"
+                android:textColor="#4169e1"
                 android:layout_gravity="end"
+                android:layout_marginRight="20dp"
+                android:text="保存"
                 />
 
         </com.google.android.material.appbar.MaterialToolbar>
 
         <TextView
-            android:id="@+id/name_of_instant"
-            android:layout_width="192dp"
-            android:layout_height="48dp"
+            android:id="@+id/text_view_name_of_instant_review_make"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="20dp"
             android:text="インスタント食品の名称"
-            app:layout_constraintTop_toBottomOf="@id/toolbar"
             app:layout_constraintLeft_toLeftOf="parent"
-            />
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:gravity="center"
-            android:text="This is review make fragment"
-            tools:layout_editor_absoluteX="205dp"
-            tools:layout_editor_absoluteY="190dp"
+            app:layout_constraintTop_toBottomOf="@+id/toolbar_review_make"
             />
 
         <EditText
-            android:id="@+id/editTextText"
+            android:id="@+id/edit_text_name_of_instant_review_make"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:layout_constraintTop_toBottomOf="@+id/name_of_instant"
-            app:layout_constraintLeft_toLeftOf="parent"
+            android:background="@drawable/shape_rounded_corners_10dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginRight="20dp"
+            android:hint="例（カップヌードル）"
             android:inputType="text"
-            />
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/text_view_name_of_instant_review_make" />
+
+        <ImageView
+            android:id="@+id/image_view_review_make"
+            android:layout_width="144dp"
+            android:layout_height="220dp"
+            android:background="@drawable/shape_rounded_corners_10dp"
+            android:layout_marginTop="20dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/edit_text_name_of_instant_review_make" />
+
+        <TextView
+            android:id="@+id/text_view_review_review_make"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="264dp"
+            android:text="レビュー"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/edit_text_name_of_instant_review_make" />
+
+        <EditText
+            android:id="@+id/edit_text_review_review_make"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:background="@drawable/shape_rounded_corners_10dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="60dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginBottom="20dp"
+            android:inputType="textMultiLine"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/image_view_review_make" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
