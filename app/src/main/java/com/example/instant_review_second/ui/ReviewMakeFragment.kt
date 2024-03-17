@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.EditText
 import android.widget.ImageButton
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
@@ -22,7 +23,6 @@ class ReviewMakeFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_review_make, container, false)
     }
 
@@ -44,13 +44,21 @@ class ReviewMakeFragment : Fragment() {
                 ?.popBackStack()
         }
 
+        val editTextNameOfInstantReviewMake: EditText = view.findViewById(R.id.edit_text_name_of_instant_review_make)
+        var inputEditTextNameOfInstantReviewMake: String?
+
+        val editTextReviewMake: EditText = view.findViewById(R.id.edit_text_review_make)
+        var inputEditTextReviewMake: String?
+
         val textViewSaveReviewMake: TextView = view.findViewById(R.id.text_view_save_review_make)
         textViewSaveReviewMake.setOnClickListener {
             val mainActivity = activity as MainActivity?
             if (mainActivity != null) {
                 lifecycleScope.launch(Dispatchers.IO){
                     withContext(Dispatchers.Default) {
-                        mainActivity.reviewDao.insertAll()
+                        inputEditTextNameOfInstantReviewMake = editTextNameOfInstantReviewMake.text.toString()
+                        inputEditTextReviewMake = editTextReviewMake.text.toString()
+                        mainActivity.reviewDao.insertAll(inputEditTextNameOfInstantReviewMake, inputEditTextReviewMake)
                         println("insertAll()したよ。")
                     }
                 }

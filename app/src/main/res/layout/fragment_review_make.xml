@@ -87,7 +87,7 @@
             app:layout_constraintTop_toBottomOf="@+id/edit_text_name_of_instant_review_make" />
 
         <TextView
-            android:id="@+id/text_view_review_review_make"
+            android:id="@+id/text_view_review_make"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="20dp"
@@ -97,7 +97,7 @@
             app:layout_constraintTop_toBottomOf="@+id/edit_text_name_of_instant_review_make" />
 
         <EditText
-            android:id="@+id/edit_text_review_review_make"
+            android:id="@+id/edit_text_review_make"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:background="@drawable/shape_rounded_corners_10dp"

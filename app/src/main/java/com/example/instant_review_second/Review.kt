@@ -7,14 +7,14 @@ import androidx.room.PrimaryKey
 @Entity(tableName = "review_data_table")
 data class Review(
     @PrimaryKey
-    val reviewDay: Int,
+    val reviewId: Int,
 
     @ColumnInfo(name = "name_of_instant")
-    val nameOfInstant: String,
+    val nameOfInstant: String?,
 
     @ColumnInfo(name = "comment_of_want")
-    val commentOfWant: String,
+    val commentOfWant: String?,
 
     @ColumnInfo(name = "comment_of_review")
-    val commentOfReview: String,
+    val commentOfReview: String?,
 )

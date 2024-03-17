@@ -9,7 +9,7 @@ import androidx.room.Update
 @Dao
 interface ReviewDao {
     @Insert
-    fun insertAll(vararg reviews: Review)
+    fun insertAll(vararg reviews: String?)
 
     @Update
     fun updateReviews(vararg reviews: Review)
