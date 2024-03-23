@@ -22,6 +22,7 @@ class MainActivity : AppCompatActivity() {
     //Room用
     lateinit var database: ReviewRoomDatabase
     lateinit var reviewDao: ReviewDao
+    lateinit var reviewEntity: ReviewEntity
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

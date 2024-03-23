@@ -12,7 +12,9 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.lifecycleScope
 import com.example.instant_review_second.MainActivity
 import com.example.instant_review_second.R
+import com.example.instant_review_second.ReviewEntity
 import com.google.android.material.floatingactionbutton.FloatingActionButton
+import com.google.android.material.snackbar.Snackbar
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
@@ -29,7 +31,8 @@ class ReviewMakeFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        val toolbar = view.findViewById<com.google.android.material.appbar.MaterialToolbar>(R.id.toolbar_review_make)
+        val toolbar =
+            view.findViewById<com.google.android.material.appbar.MaterialToolbar>(R.id.toolbar_review_make)
         (activity as AppCompatActivity).setSupportActionBar(toolbar)
         (activity as AppCompatActivity).supportActionBar?.setDisplayShowTitleEnabled(false)
         val fab = getActivity()?.findViewById<FloatingActionButton>(R.id.floating_action_button)
@@ -44,25 +47,41 @@ class ReviewMakeFragment : Fragment() {
                 ?.popBackStack()
         }
 
-        val editTextNameOfInstantReviewMake: EditText = view.findViewById(R.id.edit_text_name_of_instant_review_make)
+        val editTextNameOfInstantReviewMake: EditText =
+            view.findViewById(R.id.edit_text_name_of_instant_review_make)
         var inputEditTextNameOfInstantReviewMake: String?
 
         val editTextReviewMake: EditText = view.findViewById(R.id.edit_text_review_make)
         var inputEditTextReviewMake: String?
 
+        inputEditTextNameOfInstantReviewMake = editTextNameOfInstantReviewMake.text.toString()
+        inputEditTextReviewMake = editTextReviewMake.text.toString()
+
         val textViewSaveReviewMake: TextView = view.findViewById(R.id.text_view_save_review_make)
         textViewSaveReviewMake.setOnClickListener {
+
             val mainActivity = activity as MainActivity?
             if (mainActivity != null) {
-                lifecycleScope.launch(Dispatchers.IO){
-                    withContext(Dispatchers.Default) {
-                        inputEditTextNameOfInstantReviewMake = editTextNameOfInstantReviewMake.text.toString()
-                        inputEditTextReviewMake = editTextReviewMake.text.toString()
-                        mainActivity.reviewDao.insertAll(inputEditTextNameOfInstantReviewMake, inputEditTextReviewMake)
-                        println("insertAll()したよ。")
+
+                if (inputEditTextNameOfInstantReviewMake!!.isNotEmpty() || inputEditTextReviewMake!!.isNotEmpty()) {
+
+                    lifecycleScope.launch(Dispatchers.IO) {
+                        withContext(Dispatchers.Default) {
+
+                            mainActivity.reviewEntity = ReviewEntity(0, inputEditTextNameOfInstantReviewMake, inputEditTextReviewMake)
+                            mainActivity.reviewDao.insertReview(mainActivity.reviewEntity)
+                            println("insertAll()したよ。")
+
+                        }
                     }
+
+
+                } else {
+                    Snackbar.make(it,"入力してください", Snackbar.LENGTH_LONG).show()
                 }
+
             }
+
         }
     }
 

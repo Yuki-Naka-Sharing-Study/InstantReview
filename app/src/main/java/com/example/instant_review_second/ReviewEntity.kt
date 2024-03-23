@@ -5,16 +5,16 @@ import androidx.room.Entity
 import androidx.room.PrimaryKey
 
 @Entity(tableName = "review_data_table")
-data class Review(
+data class ReviewEntity(
     @PrimaryKey
-    val reviewId: Int,
+    var reviewId: Int,
 
     @ColumnInfo(name = "name_of_instant")
-    val nameOfInstant: String?,
+    var nameOfInstant: String?,
 
     @ColumnInfo(name = "comment_of_want")
-    val commentOfWant: String?,
+    var commentOfWant: String?,
 
     @ColumnInfo(name = "comment_of_review")
-    val commentOfReview: String?,
+    var commentOfReview: String?,
 )

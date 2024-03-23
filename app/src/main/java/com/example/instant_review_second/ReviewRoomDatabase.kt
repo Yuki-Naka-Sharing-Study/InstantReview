@@ -6,7 +6,7 @@ import androidx.room.Room.databaseBuilder
 import androidx.room.RoomDatabase
 
 // Annotates class to be a Room Database with a table (entity) of the Word class
-@Database(entities = [Review::class], version = 1, exportSchema = false)
+@Database(entities = [ReviewEntity::class], version = 1, exportSchema = false)
 abstract class ReviewRoomDatabase : RoomDatabase() {
 
     abstract fun reviewDao(): ReviewDao
