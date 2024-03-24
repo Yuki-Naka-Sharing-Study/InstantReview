@@ -49,13 +49,8 @@ class ReviewMakeFragment : Fragment() {
 
         val editTextNameOfInstantReviewMake: EditText =
             view.findViewById(R.id.edit_text_name_of_instant_review_make)
-        var inputEditTextNameOfInstantReviewMake: String
-
         val editTextReviewMake: EditText = view.findViewById(R.id.edit_text_review_make)
-        var inputEditTextReviewMake: String
 
-        inputEditTextNameOfInstantReviewMake = editTextNameOfInstantReviewMake.text.toString()
-        inputEditTextReviewMake = editTextReviewMake.text.toString()
 
         val textViewSaveReviewMake: TextView = view.findViewById(R.id.text_view_save_review_make)
         textViewSaveReviewMake.setOnClickListener {
@@ -63,27 +58,20 @@ class ReviewMakeFragment : Fragment() {
             val mainActivity = activity as MainActivity?
             if (mainActivity != null) {
 
-                if (inputEditTextNameOfInstantReviewMake!!.isNotEmpty() || inputEditTextReviewMake!!.isNotEmpty()) {
+
+                if (editTextNameOfInstantReviewMake.text?.toString()?.isNotBlank() == true &&
+                    editTextReviewMake.text?.toString()?.isNotBlank() == true) {
 
                     lifecycleScope.launch(Dispatchers.IO) {
                         withContext(Dispatchers.Default) {
-
                             mainActivity.reviewDao.insertReview(
-                                ReviewEntity(
-                                    nameOfInstant = inputEditTextNameOfInstantReviewMake,
-                                ),
-                                ReviewEntity(
-                                    commentOfReview = inputEditTextReviewMake,
-                                ),
+                                ReviewEntity(nameOfInstant = editTextNameOfInstantReviewMake.text.toString()),
+                                ReviewEntity(commentOfReview = editTextReviewMake.text.toString())
                             )
-                            println("insertAll()したよ。")
-
                         }
                     }
-
-
                 } else {
-                    Snackbar.make(it,"入力してください", Snackbar.LENGTH_LONG).show()
+                    Snackbar.make(it, "入力してください", Snackbar.LENGTH_LONG).show()
                 }
 
             }
