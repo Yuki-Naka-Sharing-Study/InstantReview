@@ -6,15 +6,15 @@ import androidx.room.PrimaryKey
 
 @Entity(tableName = "review_data_table")
 data class ReviewEntity(
-    @PrimaryKey
-    var reviewId: Int,
+    @PrimaryKey(autoGenerate = true)
+    var reviewId: Int = 0,
 
     @ColumnInfo(name = "name_of_instant")
-    var nameOfInstant: String?,
+    var nameOfInstant: String = "",
 
     @ColumnInfo(name = "comment_of_want")
-    var commentOfWant: String?,
+    var commentOfWant: String = "",
 
     @ColumnInfo(name = "comment_of_review")
-    var commentOfReview: String?,
+    var commentOfReview: String = "",
 )

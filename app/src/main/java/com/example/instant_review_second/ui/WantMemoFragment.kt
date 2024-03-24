@@ -49,7 +49,7 @@ class WantMemoFragment : Fragment() {
             if (mainActivity != null) {
                 lifecycleScope.launch(Dispatchers.IO){
                     withContext(Dispatchers.Default) {
-                        mainActivity.reviewDao.insertAll()
+                        //mainActivity.reviewDao.insertAll()
                     }
                 }
             }

@@ -49,10 +49,10 @@ class ReviewMakeFragment : Fragment() {
 
         val editTextNameOfInstantReviewMake: EditText =
             view.findViewById(R.id.edit_text_name_of_instant_review_make)
-        var inputEditTextNameOfInstantReviewMake: String?
+        var inputEditTextNameOfInstantReviewMake: String
 
         val editTextReviewMake: EditText = view.findViewById(R.id.edit_text_review_make)
-        var inputEditTextReviewMake: String?
+        var inputEditTextReviewMake: String
 
         inputEditTextNameOfInstantReviewMake = editTextNameOfInstantReviewMake.text.toString()
         inputEditTextReviewMake = editTextReviewMake.text.toString()
@@ -68,8 +68,14 @@ class ReviewMakeFragment : Fragment() {
                     lifecycleScope.launch(Dispatchers.IO) {
                         withContext(Dispatchers.Default) {
 
-                            mainActivity.reviewEntity = ReviewEntity(0, inputEditTextNameOfInstantReviewMake, inputEditTextReviewMake)
-                            mainActivity.reviewDao.insertReview(mainActivity.reviewEntity)
+                            mainActivity.reviewDao.insertReview(
+                                ReviewEntity(
+                                    nameOfInstant = inputEditTextNameOfInstantReviewMake,
+                                ),
+                                ReviewEntity(
+                                    commentOfReview = inputEditTextReviewMake,
+                                ),
+                            )
                             println("insertAll()したよ。")
 
                         }

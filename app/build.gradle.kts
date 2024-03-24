@@ -39,6 +39,7 @@ android {
 }
 
 dependencies {
+    implementation("androidx.room:room-common:2.6.1")
     // Room dependency
     val room_version = "2.5.2"
     implementation("androidx.room:room-ktx:$room_version")
